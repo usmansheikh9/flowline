@@ -23,7 +23,7 @@ const geistMono = localFont({
 const TITLE = "Flowline: project tracking built for engineering teams";
 
 // Social card copy, mirroring the hero so the share preview matches the page.
-const SOCIAL_TITLE = "Flowline — Project management that moves as fast as your team";
+const SOCIAL_TITLE = "Flowline: Project management that moves as fast as your team";
 const SOCIAL_DESCRIPTION =
   "Flowline combines issue tracking, sprints, and roadmaps in one fast, keyboard-driven tool built for engineering teams.";
 

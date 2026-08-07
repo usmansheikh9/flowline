@@ -1,0 +1,208 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-08T00:00:00.000Z",
+  "title": "Design System: Flowline",
+  "extensions": {
+    "colorMeta": {
+      "void": {
+        "role": "neutral",
+        "displayName": "Void",
+        "canonical": "#0A0A0B",
+        "tonalRamp": ["#0A0A0B", "#131316", "#1C1C20", "#26262B", "#3A3A41", "#5C5C66", "#8B8B8F", "#EDEDEF"]
+      },
+      "slate-panel": {
+        "role": "neutral",
+        "displayName": "Slate Panel",
+        "canonical": "#131316",
+        "tonalRamp": ["#0A0A0B", "#131316", "#1C1C20", "#26262B", "#3A3A41", "#5C5C66", "#8B8B8F", "#EDEDEF"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#232326",
+        "tonalRamp": ["#0A0A0B", "#131316", "#1C1C20", "#232326", "#3A3A41", "#5C5C66", "#8B8B8F", "#EDEDEF"]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#EDEDEF",
+        "tonalRamp": ["#131316", "#26262B", "#3A3A41", "#5C5C66", "#8B8B8F", "#B4B4B8", "#D6D6D9", "#EDEDEF"]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "#8B8B8F",
+        "tonalRamp": ["#131316", "#26262B", "#3A3A41", "#5C5C66", "#8B8B8F", "#B4B4B8", "#D6D6D9", "#EDEDEF"]
+      },
+      "arc-violet": {
+        "role": "primary",
+        "displayName": "Arc Violet",
+        "canonical": "#5E5CE6",
+        "tonalRamp": ["#14133A", "#1F1D5C", "#2C2A85", "#3B39AE", "#4B49D6", "#5E5CE6", "#7D7BFF", "#B5B4FF"]
+      },
+      "arc-violet-deep": {
+        "role": "primary",
+        "displayName": "Arc Violet Deep",
+        "canonical": "#4B49D6",
+        "tonalRamp": ["#14133A", "#1F1D5C", "#2C2A85", "#3B39AE", "#4B49D6", "#5E5CE6", "#7D7BFF", "#B5B4FF"]
+      },
+      "arc-violet-lifted": {
+        "role": "primary",
+        "displayName": "Arc Violet Lifted",
+        "canonical": "#7D7BFF",
+        "tonalRamp": ["#14133A", "#1F1D5C", "#2C2A85", "#3B39AE", "#4B49D6", "#5E5CE6", "#7D7BFF", "#B5B4FF"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline only. One per page. Requires -0.02em tracking." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings." },
+      "body": { "displayName": "Body", "purpose": "Subheads and paragraphs. Cap measure at 65-75ch." },
+      "label": { "displayName": "Label", "purpose": "Uppercase mono eyebrows, tags, and metadata. Always Ash." }
+    },
+    "shadows": [
+      {
+        "name": "focal-bloom",
+        "value": "0 0 80px -20px rgba(94, 92, 230, 0.28)",
+        "purpose": "Hero product mockup only. The single sanctioned shadow in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-subtle",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Decelerating curve with no overshoot. Default for reveals and state transitions."
+      },
+      {
+        "name": "duration-reveal",
+        "value": "320ms",
+        "purpose": "Scroll-triggered fade/slide reveals."
+      },
+      {
+        "name": "duration-state",
+        "value": "150ms",
+        "purpose": "Hover and focus color transitions."
+      },
+      {
+        "name": "stagger-step",
+        "value": "80ms",
+        "purpose": "Delay between sibling reveals in a staggered group."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single accent-filled action per section. White glyphs on Arc Violet.",
+      "html": "<button class=\"ds-btn-primary\">Start building — free</button>",
+      "css": ".ds-btn-primary { background: #5E5CE6; color: #fff; padding: 12px 24px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 500; border: none; border-radius: 8px; cursor: pointer; transition: background 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: #4B49D6; } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 0 0 2px #0A0A0B, 0 0 0 4px #7D7BFF; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined companion to the primary. Same metrics so the pair aligns optically.",
+      "html": "<button class=\"ds-btn-secondary\">View demo</button>",
+      "css": ".ds-btn-secondary { background: transparent; color: #EDEDEF; padding: 12px 24px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 500; border: 1px solid #232326; border-radius: 8px; cursor: pointer; transition: background 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-secondary:hover { background: #131316; } .ds-btn-secondary:focus-visible { outline: none; box-shadow: 0 0 0 2px #0A0A0B, 0 0 0 4px #7D7BFF; }"
+    },
+    {
+      "name": "Announcement Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Fully round Slate Panel pill with a leading Arc Violet status dot.",
+      "html": "<span class=\"ds-chip\"><span class=\"ds-chip-dot\"></span>Now with real-time sync</span>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; background: #131316; color: #8B8B8F; border: 1px solid #232326; border-radius: 9999px; padding: 4px 12px; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; } .ds-chip-dot { width: 6px; height: 6px; border-radius: 9999px; background: #5E5CE6; flex-shrink: 0; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Slate Panel surface with a 1px Hairline outline. No shadow, ever.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-title\">Fix auth token refresh race condition</div><div class=\"ds-card-meta\">ENG-2847</div></div>",
+      "css": ".ds-card { background: #131316; color: #EDEDEF; border: 1px solid #232326; border-radius: 12px; padding: 24px; } .ds-card-title { font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 1rem; font-weight: 500; line-height: 1.4; } .ds-card-meta { margin-top: 8px; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: #8B8B8F; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Ash at rest, Bone on hover. The only nav state change is color.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">Product</a><a class=\"ds-nav-link\" href=\"#\">Features</a><a class=\"ds-nav-link\" href=\"#\">Pricing</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 32px; } .ds-nav-link { color: #8B8B8F; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 0.875rem; text-decoration: none; transition: color 150ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-link:hover { color: #EDEDEF; } .ds-nav-link:focus-visible { outline: none; box-shadow: 0 0 0 2px #0A0A0B, 0 0 0 4px #7D7BFF; border-radius: 4px; }"
+    },
+    {
+      "name": "Avatar",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Initial-based flat circle. No image assets anywhere in the system.",
+      "html": "<span class=\"ds-avatar\">KM</span>",
+      "css": ".ds-avatar { display: inline-flex; align-items: center; justify-content: center; width: 24px; height: 24px; border-radius: 9999px; background: #232326; color: #EDEDEF; font-family: 'Geist Sans', ui-sans-serif, system-ui, sans-serif; font-size: 0.625rem; font-weight: 500; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Instrument Panel at Night",
+    "overview": "Flowline's surface behaves like precision equipment observed in a dark room. The canvas is not black but very-near-black (#0A0A0B), the way an unlit screen is never truly off. Every element reads as machined: hairline borders instead of shadows, tonal steps instead of glow, monospace where the interface is naming something rather than speaking to you. Nothing is decorative that could not also be functional.\n\nThe density is calm and generous rather than packed. Marketing surfaces breathe at 96px section rhythm; the product mockups inside them stay tight, because the contrast between the two is the argument — the page is unhurried, the tool is fast. Restraint carries the identity. A single violet is the only chromatic event in the entire system, and it appears at most once per section. Its scarcity is what makes it read as intentional rather than as branding applied on top.\n\nThe confirmed anti-reference is the gradient-heavy, multi-hue, glass-morphic SaaS register. Flowline rejects it: no gradient meshes, no hero blur blobs, no second accent hue introduced for variety.",
+    "keyCharacteristics": [
+      "Near-black canvas, never pure black",
+      "One accent hue, used at most once per section",
+      "Hairline borders as the primary separation device; shadows are almost absent",
+      "Monospace reserved for labels, tags, and code-like fragments",
+      "Tight negative letter-spacing on large type, wide positive on small mono labels"
+    ],
+    "rules": [
+      {
+        "name": "The One Accent Rule",
+        "body": "Arc Violet appears at most once per section, and never twice in the same viewport. If a section needs a second emphasis, it earns it with weight, size, or a tonal step — not with color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Text-Safe Rule",
+        "body": "#5E5CE6 measures 4.13:1 on #0A0A0B and therefore never carries body-size text. Accent fills use #5E5CE6 with white glyphs (4.79:1); accent text uses #7D7BFF (5.8:1). Violating this is the single easiest way to fail the project's accessibility target.",
+        "section": "colors"
+      },
+      {
+        "name": "The No Second Hue Rule",
+        "body": "Status colors inside product mockups are expressed as tonal steps of the neutrals, not as a red/amber/green semantic palette. The one exception is a functional status dot, which may only ever be Arc Violet, Ash, or Bone.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tracking Inversion Rule",
+        "body": "Letter-spacing runs negative as type grows and positive as it shrinks. Large type tightens (-0.02em); small mono labels open up (+0.08em). Never the reverse.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono-Is-A-Noun Rule",
+        "body": "Geist Mono labels things — statuses, tags, section eyebrows, identifiers. It never sets a sentence. If it reads as prose, it should be Geist Sans.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "Surfaces are flat at rest. If an element needs to feel raised, change its background one tonal step and give it a hairline border before reaching for a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do use #7D7BFF for any accent-colored text or icon; reserve #5E5CE6 for fills.",
+      "Do express depth as a tonal step plus a 1px #232326 border.",
+      "Do set every mono label uppercase at 0.75rem with +0.08em tracking, in Ash.",
+      "Do tighten tracking to -0.02em on any type above 48px.",
+      "Do build product mockups from markup so they cost nothing at LCP.",
+      "Do degrade every motion to a fade under prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't introduce a second accent hue, a gradient mesh, or a glass-morphic panel.",
+      "Don't place #5E5CE6 behind body-size text, or as body-size text.",
+      "Don't use a drop shadow on a card, button, or the nav bar.",
+      "Don't let Arc Violet appear twice in one viewport.",
+      "Don't set prose in Geist Mono.",
+      "Don't thicken a border past 1px to signal emphasis.",
+      "Don't fabricate customer names, logos, quotes, headshots, or pricing — see PRODUCT.md's Evidence on Hand."
+    ]
+  }
+}
