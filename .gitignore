@@ -31,6 +31,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# vendored agent skills: reproduce via skills-lock.json, see README
+.claude/skills/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
