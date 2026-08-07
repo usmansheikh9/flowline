@@ -2,22 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    color-scheme: dark;
+  }
+
+  html {
+    /* Painted before hydration so there is no white flash on first paint. */
+    @apply bg-background;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One visible focus treatment for every interactive element. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent-text ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Small uppercase mono labels: eyebrows, tags, code-like chips. */
+  .label-mono {
+    @apply font-mono text-xs uppercase tracking-label text-muted;
+  }
+
+  /*
+   * Above-the-fold entrance. Deliberately CSS rather than framer-motion: the
+   * hero headline is the LCP element, and a JS-driven reveal would hold it at
+   * opacity 0 until hydration. This runs off the main thread on first paint.
+   * Stagger is set per element via --rise-delay.
+   */
+  .hero-rise {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: hero-rise 320ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation-delay: var(--rise-delay, 0ms);
+  }
+}
+
+@keyframes hero-rise {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/*
+ * Live-presence indicator. The one looping animation on the page: it carries
+ * state ("this is syncing now") rather than decoration. The reduced-motion
+ * block above collapses it to its resting frame.
+ */
+@keyframes soft-pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-soft-pulse {
+  animation: soft-pulse 2.4s ease-in-out infinite;
 }
 
 @layer utilities {
