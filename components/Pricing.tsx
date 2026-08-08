@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import Reveal from "./Reveal";
+import { DEMO_MAILTO, SALES_MAILTO } from "@/lib/links";
 
 /*
  * PLACEHOLDER PRICING. The $12/user/month figure is invented. No pricing has
@@ -17,6 +18,7 @@ type Tier = {
   description: string;
   features: string[];
   cta: string;
+  href: string;
   featured: boolean;
 };
 
@@ -32,6 +34,7 @@ const TIERS: Tier[] = [
       "30-day history",
     ],
     cta: "Start free",
+    href: DEMO_MAILTO,
     featured: false,
   },
   {
@@ -48,6 +51,7 @@ const TIERS: Tier[] = [
       "Priority support",
     ],
     cta: "Start free",
+    href: DEMO_MAILTO,
     featured: true,
   },
   {
@@ -62,6 +66,7 @@ const TIERS: Tier[] = [
       "Audit logs",
     ],
     cta: "Contact sales",
+    href: SALES_MAILTO,
     featured: false,
   },
 ];
@@ -136,7 +141,7 @@ export default function Pricing() {
                   differing feature counts. */}
               <div className="mt-auto pt-10">
                 <a
-                  href={tier.name === "Enterprise" ? "#contact" : "#signup"}
+                  href={tier.href}
                   className={`block rounded-md px-4 py-2.5 text-center text-sm font-medium transition-[background-color,transform] duration-150 ease-subtle active:scale-[0.97] ${
                     tier.featured
                       ? "bg-accent text-white hover:bg-accent-hover"

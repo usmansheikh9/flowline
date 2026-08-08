@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { DEMO_MAILTO } from "@/lib/links";
 
 const NAV_LINKS = [
   { label: "Product", href: "#product" },
@@ -67,14 +68,11 @@ export default function Nav() {
         </ul>
 
         <div className="hidden items-center gap-6 md:flex">
+          {/* Inert: this demo has no auth, so it stays a label rather than a
+              link that goes nowhere. No hover state, since it isn't clickable. */}
+          <span className="text-sm text-muted">Log in</span>
           <a
-            href="#login"
-            className="rounded-sm text-sm text-muted transition-colors duration-150 ease-subtle hover:text-foreground"
-          >
-            Log in
-          </a>
-          <a
-            href="#signup"
+            href={DEMO_MAILTO}
             className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white transition-[background-color,transform] duration-150 ease-subtle hover:bg-accent-hover active:scale-[0.97]"
           >
             Start free
@@ -130,15 +128,9 @@ export default function Nav() {
               ))}
             </ul>
             <div className="flex flex-col gap-3 border-t border-border px-6 py-4">
+              <span className="py-1 text-sm text-muted">Log in</span>
               <a
-                href="#login"
-                onClick={closeMenu}
-                className="rounded-sm py-1 text-sm text-muted transition-colors duration-150 ease-subtle hover:text-foreground"
-              >
-                Log in
-              </a>
-              <a
-                href="#signup"
+                href={DEMO_MAILTO}
                 onClick={closeMenu}
                 className="rounded-md bg-accent px-4 py-2 text-center text-sm font-medium text-white transition-[background-color,transform] duration-150 ease-subtle hover:bg-accent-hover active:scale-[0.97]"
               >

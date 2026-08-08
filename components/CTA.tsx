@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { DEMO_MAILTO } from "@/lib/links";
 
 export default function CTA() {
   return (
@@ -20,7 +21,7 @@ export default function CTA() {
           </p>
 
           <a
-            href="#signup"
+            href={DEMO_MAILTO}
             className="mt-10 inline-block rounded-md bg-accent px-6 py-3 font-medium text-white transition-[background-color,transform] duration-150 ease-subtle hover:bg-accent-hover active:scale-[0.97]"
           >
             Start free

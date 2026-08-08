@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import HeroMockup from "./HeroMockup";
+import { DEMO_MAILTO } from "@/lib/links";
 
 export default function Hero() {
   return (
@@ -30,13 +31,13 @@ export default function Hero() {
           style={{ "--rise-delay": "160ms" } as React.CSSProperties}
         >
           <a
-            href="#signup"
+            href={DEMO_MAILTO}
             className="rounded-md bg-accent px-6 py-3 font-medium text-white transition-[background-color,transform] duration-150 ease-subtle hover:bg-accent-hover active:scale-[0.97]"
           >
             Start free
           </a>
           <a
-            href="#demo"
+            href={DEMO_MAILTO}
             className="rounded-md border border-border px-6 py-3 font-medium text-foreground transition-[background-color,transform] duration-150 ease-subtle hover:bg-surface active:scale-[0.97]"
           >
             View demo
