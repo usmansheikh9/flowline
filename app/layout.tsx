@@ -28,9 +28,9 @@ const SOCIAL_DESCRIPTION =
   "Flowline combines issue tracking, sprints, and roadmaps in one fast, keyboard-driven tool built for engineering teams.";
 
 export const metadata: Metadata = {
-  // Placeholder origin. Swap for the custom domain once one is attached;
-  // every relative metadata URL resolves against this.
-  metadataBase: new URL("https://flowline-landing.vercel.app"),
+  // GitHub Pages origin, including the /flowline project path. Every relative
+  // metadata URL resolves against this; swap it if a custom domain is attached.
+  metadataBase: new URL("https://usmansheikh9.github.io/flowline"),
   title: {
     default: TITLE,
     template: "%s | Flowline",
