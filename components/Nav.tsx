@@ -8,7 +8,6 @@ const NAV_LINKS = [
   { label: "Product", href: "#product" },
   { label: "Features", href: "#features" },
   { label: "Pricing", href: "#pricing" },
-  { label: "Changelog", href: "#changelog" },
 ];
 
 export default function Nav() {
